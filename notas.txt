@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 https://www.youtube.com/watch?v=KNaeM5UqRZk
 Chatea con tus PDFS con DeepSeek-R1 en TU PC GRATIS!
 
@@ -27,3 +28,16 @@ def index_docs(documents):
 
 -- Error Nº2
 pip install -U langchain-community pypdf
+=======
+microsoft c++ build tools
+visualstudio.microsoft.com/es/visualcpp-build-tools
+winget install --id Microsoft.VisualStudio.2022.BuildTools --override "--add Microsoft.VisualStudio.Workload.VCTools --includeRecommended --passive --wait"
+
+En el apartado de arriba llamado "Variables de usuario para [TuNombre]", 
+haz clic en el botón Nueva....
+
+Llena las casillas exactamente con estos datos:
+
+Nombre de la variable: OLLAMA_EMBEDDINGS
+Valor de la variable: 1
+>>>>>>> c968b148650b749864631e185efdbcf15381ae21
