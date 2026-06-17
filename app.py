@@ -11,6 +11,7 @@ from langchain_ollama import OllamaEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama.llms import OllamaLLM
 from langchain_community.vectorstores.utils import filter_complex_metadata
+#import streamlit.components.v1 as components
 
 template = """
 Eres un asistente especializado en procesar y responder preguntas en español. Tu tarea es:
@@ -80,8 +81,6 @@ def index_docs(documents):
     if clean_documents:
         vector_store.add_documents(clean_documents)
 
-
-
 # recibe la pregunta del usuario y busqueda por similitud
 def retrieve_docs(query):
     return vector_store.similarity_search(query)
@@ -95,7 +94,7 @@ def answer_question(question, documents):
 
 # st (Grafica)
 uploaded_file = st.file_uploader(
-    "Subir PDF",
+    "Subir o cargar un archivo PDF",
     type="pdf",
     accept_multiple_files=False
 )
@@ -106,9 +105,24 @@ if uploaded_file:
     chunked_documents = split_text(documents)
     index_docs(chunked_documents)
 
-    question = st.chat_input("Escribe tu pregunta aqui...")
+    question = st.chat_input("Escribe aquí tu pregunta...")
     if question:
         st.chat_message("user").write(question)
         related_documents = retrieve_docs(question)
         answer = answer_question(question, related_documents)
         st.chat_message("assistant").write(answer)
+ 
+# 1. Configurar la página (SIEMPRE DEBE IR PRIMERO)
+st.set_page_config(
+    page_title="HIS IA Chatbot PDF", # El título de la pestaña del navegador
+    page_icon="ico/robot_tierno.ico", # El icono de la pestaña (puede ser un emoji o ruta a imagen)
+    layout="centered" # Opcional: "centered" o "wide"
+)
+
+# 2. El resto del contenido de tu aplicación
+st.title("HIS IA Chatbot PDF ¡Bienvenido!")
+st.write("Esta aplicación tiene por objetivo que puedas subir o cargar un archivo PDF y después puedas hacerle preguntas en base a su contenido.")
+st.write("*** Pasos: ***")
+st.write("1. Subir o cargar un archivo PDF")
+st.write("2. Escribir una pregunta y presionar la tecla <ENTER>")
+st.write("3. Esperar a la respuesta. En la parte superior derecha aparecerán unos iconos que indican si se esta procesando")

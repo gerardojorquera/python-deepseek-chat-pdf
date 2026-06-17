@@ -1,7 +1,6 @@
 https://www.youtube.com/watch?v=KNaeM5UqRZk
 Chatea con tus PDFS con DeepSeek-R1 en TU PC GRATIS!
 
-
 1. ollama.com /descargar para windows
 2. instalar... next, next, next
 3. ollama.com / buscar modelo: deepseek-r1 14m parametros
@@ -28,4 +27,3 @@ def index_docs(documents):
 
 -- Error Nº2
 pip install -U langchain-community pypdf
-
