@@ -1,0 +1,11 @@
+microsoft c++ build tools
+visualstudio.microsoft.com/es/visualcpp-build-tools
+winget install --id Microsoft.VisualStudio.2022.BuildTools --override "--add Microsoft.VisualStudio.Workload.VCTools --includeRecommended --passive --wait"
+
+En el apartado de arriba llamado "Variables de usuario para [TuNombre]", 
+haz clic en el botón Nueva....
+
+Llena las casillas exactamente con estos datos:
+
+Nombre de la variable: OLLAMA_EMBEDDINGS
+Valor de la variable: 1
