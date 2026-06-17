@@ -28,7 +28,8 @@ cryptography==49.0.0
 cycler==0.12.1
 cymem==2.0.13
 durationpy==0.10
-emoji==2.15.0
+#emoji==2.15.0
+emoji
 #en_core_web_sm==3.8.0
 en_core_web_sm
 filelock==3.29.3
