@@ -1,2 +1,5 @@
 .venv/
 pdfs/
+.devcontainer/
+chroma_db/
+vectordb/
